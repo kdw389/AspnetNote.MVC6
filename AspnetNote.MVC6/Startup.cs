@@ -32,6 +32,15 @@ namespace AspnetNote.MVC6
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // DI 의존성 주입 - ASP.NET MVC 4, 5 + Unity(게임 X)
+
+            // Session - 서비스에 등록함.
+            services.AddSession();
+            // Identity
+
+            // Web API 관련
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +56,8 @@ namespace AspnetNote.MVC6
             }
 
             app.UseStaticFiles();
+            // 이 app에 Session을 적용함.
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
