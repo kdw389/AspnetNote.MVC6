@@ -12,7 +12,7 @@ namespace AspnetNote.MVC6.Controllers
     public class AccountController : Controller
     {
         /// <summary>
-        /// 로그인
+            /// 로그인
         /// </summary>
         /// <returns></returns>
         // GET: /<controller>/
@@ -35,11 +35,8 @@ namespace AspnetNote.MVC6.Controllers
                     // u -> 익명 인수
                     // == 비교는 메모리 누수가 발생함.
                     //var user = db.Users.FirstOrDefault(u => u.UserId == model.UserId && u.UserPassword == model.UserPassword);
-
                     var user = db.Users.FirstOrDefault(u => u.UserId.Equals(model.UserId) && u.UserPassword.Equals(model.UserPassword));
-
                     //var user = db.Users.FirstOrDefault(u => u.UserId.Equals(model.UserId));
-
                     if (user != null)
                     {
                         //로그인에 성공했을 때
@@ -49,8 +46,8 @@ namespace AspnetNote.MVC6.Controllers
                     }
                     //else
                     //{
-                    //    //사용자 ID 자체가 회원가입 X 경우
-                    //    //ModelState.AddModelError(string.Empty, "사용자 ID가 존재하지 않습니다.");
+                        //사용자 ID 자체가 회원가입 X 경우
+                        //ModelState.AddModelError(string.Empty, "사용자 ID가 존재하지 않습니다.");
                     //}
                 }
                     //로그인에 실패했을 때
@@ -68,7 +65,7 @@ namespace AspnetNote.MVC6.Controllers
         }
 
         /// <summary>
-        /// 회원 가입
+            /// 회원 가입
         /// </summary>
         /// <returns></returns>
         public IActionResult Register()
@@ -77,7 +74,7 @@ namespace AspnetNote.MVC6.Controllers
         }
 
         /// <summary>
-        /// 회원가입 전송
+            /// 회원가입 전송
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
